@@ -33,31 +33,47 @@ module ActsAsTaggableOn
 end
 
 
-require "acts_as_taggable_on/utils"
+# require "acts_as_taggable_on/utils"
 
-require "acts_as_taggable_on/taggable"
-require "acts_as_taggable_on/acts_as_taggable_on/compatibility"
-require "acts_as_taggable_on/acts_as_taggable_on/core"
-require "acts_as_taggable_on/acts_as_taggable_on/collection"
-require "acts_as_taggable_on/acts_as_taggable_on/cache"
-require "acts_as_taggable_on/acts_as_taggable_on/ownership"
-require "acts_as_taggable_on/acts_as_taggable_on/related"
-require "acts_as_taggable_on/acts_as_taggable_on/dirty"
+# require "acts_as_taggable_on/taggable"
+# require "acts_as_taggable_on/acts_as_taggable_on/compatibility"
+# require "acts_as_taggable_on/acts_as_taggable_on/core"
+# require "acts_as_taggable_on/acts_as_taggable_on/collection"
+# require "acts_as_taggable_on/acts_as_taggable_on/cache"
+# require "acts_as_taggable_on/acts_as_taggable_on/ownership"
+# require "acts_as_taggable_on/acts_as_taggable_on/related"
+# require "acts_as_taggable_on/acts_as_taggable_on/dirty"
 
-require "acts_as_taggable_on/tagger"
+# require "acts_as_taggable_on/tagger"
 # require "acts_as_taggable_on/tag"
-require "acts_as_taggable_on/tag_list"
-require "acts_as_taggable_on/tags_helper"
+# require "acts_as_taggable_on/tag_list"
+# require "acts_as_taggable_on/tags_helper"
 # require "acts_as_taggable_on/tagging"
 
 $LOAD_PATH.shift
 
 
 if defined?(ActiveRecord::Base)
+  puts '>>>>>> Init AR in tag'
+  puts "#{ActiveRecord::Base.connected?}"
   # require "active_record"
   # require "active_record/version"
 
+  require "acts_as_taggable_on/utils"
+
+  require "acts_as_taggable_on/taggable"
+  require "acts_as_taggable_on/acts_as_taggable_on/compatibility"
+  require "acts_as_taggable_on/acts_as_taggable_on/core"
+  require "acts_as_taggable_on/acts_as_taggable_on/collection"
+  require "acts_as_taggable_on/acts_as_taggable_on/cache"
+  require "acts_as_taggable_on/acts_as_taggable_on/ownership"
+  require "acts_as_taggable_on/acts_as_taggable_on/related"
+  require "acts_as_taggable_on/acts_as_taggable_on/dirty"
+
+  require "acts_as_taggable_on/tagger"
   require "acts_as_taggable_on/tag"
+  require "acts_as_taggable_on/tag_list"
+  require "acts_as_taggable_on/tags_helper"
   require "acts_as_taggable_on/tagging"
 
   ActiveRecord::Base.extend ActsAsTaggableOn::Compatibility
