@@ -54,8 +54,7 @@ $LOAD_PATH.shift
 
 
 if defined?(ActiveRecord::Base)
-  puts '>>>>>> Init AR in tag'
-  puts "#{ActiveRecord::Base.connected?}"
+  puts ">>>>>> Init AR in tag, #{!!ActiveRecord::Base.connected?}"
   # require "active_record"
   # require "active_record/version"
 
