@@ -1,5 +1,5 @@
-require "active_record"
-require "active_record/version"
+# require "active_record"
+# require "active_record/version"
 require "action_view"
 
 require "digest/sha1"
@@ -54,6 +54,9 @@ $LOAD_PATH.shift
 
 
 if defined?(ActiveRecord::Base)
+  # require "active_record"
+  # require "active_record/version"
+
   require "acts_as_taggable_on/tag"
   require "acts_as_taggable_on/tagging"
 
